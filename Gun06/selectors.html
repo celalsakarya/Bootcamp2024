@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors</title>
+    <style>
+      /* element */
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+      /*class*/
+      .favori {
+        border-left: 10px solid #007aff;
+      }
+      /* id */
+      #memleket {
+        text-align: center;
+      }
+
+      #memleket::after {
+        content: "(OTOPARK)";
+        font-weight: bold;
+      }
+      /* immediate child */
+      div > p {
+        margin: 0 70px;
+        text-align: justify;
+        font-size: 80%;
+      }
+      div p {
+        font-family: "Comic Sans MS";
+      }
+      h1,
+      h2 {
+        background-color: black;
+        color: white;
+      }
+      /* attribute */
+      [title] {
+        background-color: yellow;
+      }
+      li[title] {
+        font-style: italic;
+      }
+      h2 + p {
+        text-indent: 40px;
+      }
+      /* odd ya da 2n+1 tek sayıları seçer */
+      li:nth-child(odd) {
+        background-color: aliceblue;
+      }
+      /* 6. çocuk */
+      li:nth-child(6) {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        font-style: italic;
+        font-family: arial;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px red;
+        color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Türkiye</h1>
+    <h2>Kütahya</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, incidunt,
+      ducimus praesentium doloribus vero facere tenetur debitis ipsa enim quam
+      sunt veniam voluptate deserunt nam! Soluta commodi minus possimus voluptas
+      nisi tempora delectus? Atque deserunt perspiciatis temporibus est placeat
+      at quos obcaecati labore officiis quod magni voluptas deleniti, animi ea.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+      molestias. Ut consectetur sed, soluta minima qui ab tempora temporibus,
+      neque magnam distinctio quaerat maiores dolorem eligendi fugiat placeat.
+      Autem, similique temporibus commodi deleniti voluptatem doloremque alias
+      officiis non accusamus delectus aperiam perferendis possimus sunt? Nobis
+      explicabo ratione ab animi voluptates!
+    </p>
+    <div>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+        illo perferendis eaque blanditiis pariatur repudiandae, tempora modi quo
+        in sint dolorum neque minus ea perspiciatis. Debitis architecto labore
+        quaerat perspiciatis?
+      </p>
+      <section>
+        <p>
+          Kütahya
+          <span
+            title="beyaz kil bir gövdenin yüksek sıcaklıklarda pişirilmesiyle yapılan"
+            >porselen</span
+          >
+          sunar...
+        </p>
+      </section>
+    </div>
+    <h3>İlçeleri</h3>
+    <ul>
+      <li>Merkez</li>
+      <li>Altıntaş</li>
+      <li>Aslanapa</li>
+      <li title="Dikkat! Antik kent içerir">Çavdarhisar</li>
+      <li class="favori">Domaniç</li>
+      <li>Dumlupınar</li>
+      <li class="favori">Emet</li>
+      <li>Gediz</li>
+      <li>Hisarcık</li>
+      <li>Pazarlar</li>
+      <li>Simav</li>
+      <li>Şaphane</li>
+      <li id="memleket" class="favori">Tavşanlı</li>
+    </ul>
+  </body>
+</html>
