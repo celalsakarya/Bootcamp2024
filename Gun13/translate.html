@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kutular</title>
+    <style>
+      .kutu {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        margin: 1rem;
+      }
+      .celal {
+        transform: scale(1.5) translate(100px, -25px);
+        background-color: yellow;
+      }
+      .sakarya {
+        animation: sakaryaSahneleri 3s linear infinite;
+      }
+
+      @keyframes sakaryaSahneleri {
+        form {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kutu sakarya"></div>
+    <div class="kutu"></div>
+    <div class="kutu celal"></div>
+    <div class="kutu"></div>
+  </body>
+</html>
