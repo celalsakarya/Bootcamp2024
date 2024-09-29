@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: "VT323", monospace;
+}
+
+#saat {
+  font-size: 12vw;
+}
