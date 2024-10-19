@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Elementi Oluşturma</title>
+  </head>
+  <body>
+    <script>
+      const baslik = document.createElement("h1");
+      baslik.textContent = "Bir Başlık";
+      document.body.append(baslik);
+      // p elementi oluşturma
+      const parag = document.createElement("p");
+      parag.textContent =
+        "hocam hiçbir şey gelmedi aklıma. javascript öğreniyorum olsun";
+
+      // oluşan elementi DOM ağacına eklemeniz lazım
+      document.body.append(parag);
+
+      const guclu = document.createElement("strong");
+      guclu.textContent =
+        " Bu cümleyi koyamayacağımı, paragrafın sonuna eklemeyeceğimi iddia ettiler";
+      parag.append(guclu);
+
+      const vurgulu = document.createElement("em");
+      vurgulu.textContent = "bilmiyorum hocam!";
+      parag.prepend(vurgulu);
+
+      // başlıktan sonra yatay çizgi ekleme
+
+      const cizgi = document.createElement("hr");
+      baslik.after(cizgi);
+
+      baslik.abidik = "tencere tava";
+    </script>
+  </body>
+</html>

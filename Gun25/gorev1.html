@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-3">Gezelim Görelim</h1>
+      <ul id="Ulkeler"></ul>
+    </div>
+  </body>
+  <script>
+    const dizi = [
+      "Fransa",
+      "İtalya",
+      "Avustralya",
+      "Amerika",
+      "Almanya",
+      "İsviçre",
+      "Papua Yeni Gine",
+      "Finlandiya",
+    ];
+    const ul = document.getElementById("Ulkeler");
+    dizi.forEach((Ulke) => {
+      const li = document.createElement("li");
+      li.textContent = Ulke;
+      li.className = "list-group-item";
+
+      ul.append(li);
+    });
+
+    // GÖREV: form submit aşamasında submit event'ini iptal et
+    // onun yerine ülke kutusundaki değeri al ve dizinin başına ekle
+    // ve yukardaki listeleme komutunu çalıştır
+
+    const frm = document.getElementById("frmUlke");
+    const txt = document.getElementById("frmUlke");
+
+    frm.addEventListener("submit", function (event) {
+      event.preventDefault(); // formu teslim etme
+      const UlkeAd = txt.value;
+      dizi.unshift(UlkeAd);
+      console.log(dizi);
+    });
+  </script>
+</html>
