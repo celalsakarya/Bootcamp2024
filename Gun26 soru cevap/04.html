@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Görev 4</title>
+  </head>
+  <body>
+    <!-- GÖREV4: İçinde 1 yazan buton koy, her basışında değeri 1 artsın.
+ Önemli not: biri olur da html üzerinden sayıyı 10 yapmaya karar verirse
+ program kendini ona göre adapte etsin. Yani tıklayınca 11 12 13 .. şeklinde 
+ artsın. -->
+
+    <button id="btn">1</button>
+    <button id="btn">100</button>
+
+    <script>
+      const btn1 = document.getElementById("btn1");
+      const btn1 = document.getElementById("btn1");
+      btn1.onclick = function () {
+        btn1.textContent = Number(btn1.textContent) + 1;
+      };
+
+      // this keyword'ünü eventler'de event'e konu olan
+      //element karşılık gelir ANCAK arrow function'da işe yaramaz
+
+      btn2.onclick.function () {
+        this.textContent=Number(this.textContent) + 1;
+      }
+
+      //isimli fonksiyon ile
+
+      function arttir() {
+        this.textContent=Number(this.textContent) + 1;
+
+      }
+
+      btn3.addEventListener("click", arttir);
+      btn3.onclick=arttir;
+    </script>
+  </body>
+</html>
