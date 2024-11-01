@@ -1,0 +1,1 @@
+function yazdir(metin, donusturucu) {}
