@@ -16,13 +16,14 @@
       function merhaba() {
         document.body.innerHTML += "<p>Merhaba</p>";
       }
-      function verilenMethoduKereCagir(fonk, adet) {
+
+      function verilenMetoduKereCagir(fonk, adet) {
         for (let i = 0; i < adet; i++) {
-          fonk(); // argüman olarak verilen fonksiyonunu "CALL" ediyoruz
+          fonk(); // argüman olarak verilen fonksiyonu "CALL" ediyoruz
         }
       }
 
-      verilenMethoduKereCagir(merhaba, 4);
+      verilenMetoduKereCagir(merhaba, 4);
     </script>
   </body>
 </html>

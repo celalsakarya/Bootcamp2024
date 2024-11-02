@@ -25,15 +25,17 @@
   </head>
   <body>
     <input id="saat" type="text" readonly />
+
     <script>
       function saatiGoster() {
         const input = document.getElementById("saat");
         const suAn = new Date();
         input.value = suAn.toLocaleTimeString("tr");
       }
+
       saatiGoster();
 
-      // adı verilen fonksiyonu belli aralıklarla çağırır.
+      // adı verilen fonksiyonu belli aralıklarla çağırır
       setInterval(saatiGoster, 1000);
     </script>
   </body>
