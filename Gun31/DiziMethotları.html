@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dizi Metodları</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      body {
+        background: linear-gradient(90deg, #ccc, gray);
+        font-family: "inter", sans-serif;
+      }
+
+      pre {
+        background-color: #282c34;
+        color: #61dafb;
+        padding: 15px;
+        border-radius: 5px;
+        overflow: auto;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dizi Metodları</h1>
+    <script>
+      const meyveler = [
+        "kavun",
+        "kiraz",
+        "erik",
+        "vişne",
+        "kivi",
+        "portakal",
+        "nar",
+      ];
+
+      function yaz(str) {
+        const pre = document.createElement("pre");
+        pre.textContent = str;
+        document.querySelector("h1").after(pre);
+      }
+
+      // yaz (meyveler.toString())
+      yaz(meyveler);
+
+      let birlesik = meyveler.join("ᚖ");
+      yaz(birlesik);
+
+      // 1-3 aralığındaki elemanlar
+      yaz(meyveler.slice(1, 4));
+
+      // tüm öğeleri satır satır indeks numaralarıyla yazdır.
+      let tumu = "";
+      for (let i = 0; i < meyveler.length; i++)
+        tumu += i + ":" + meyveler[i] + "\n";
+      yaz(tumu);
+
+      // erik ve index
+      let erikIndeks = meyveler.indexOf("erik");
+      yaz("eriğin indeksi: " + erikIndeks);
+      //erik ve sonrası
+      yaz(meyveler.slice(erikIndeks));
+
+      // son iki eleman nasıl alınır?
+
+      yaz(meyveler.slice(-2));
+
+      const anaUnsurlar = ["toprak", "su", "ateş", "hava"];
+      const yeniDizi = meyveler.concat(anaUnsurlar);
+      yaz(yeniDizi);
+
+      // son üç meyve ile ilk üç unsuru yeni dizide birleştir ve yazdur
+      // hepsini tek satırda değişkene atamadan yap=>
+      yaz(meyveler.slice(-3).concat(anaUnsurlar.slice(0, 3)));
+
+      // önceki dersimizde callback function işledik
+      // onu şimdi size hatırlatacağım ama önce bir fonksiyon
+      // tanımlayalım stringleri tersine çevirsin
+
+      function tersi(metin) {
+        return metin.split("").reverse().join("");
+      }
+      yaz("meryem'in tersi: " + tersi("meryem"));
+
+      //diziyi transformasyona sokmak ve yeni bir diziye dönüştürmek
+      // soru: her meyvenin tersten yazılmış haliyle yeni bir dizi
+      // oluşturabilirmisiniz, yani kavun olacak navuk kiraz olacak zarik
+
+      const yeniDizi2 = meyveler.map(tersi);
+      yaz(yeniDizi2);
+
+      // YENİ dizi istiyorum, bu dizide öğelerin string uzunlukları yer alsın
+
+      const uzunluklar = meyveler.map((oge) => oge.length);
+      yaz(uzunluklar);
+
+      // her unsurun büyük harfli hali
+
+      const buyukler = anaUnsurlar.map((x) => x.toUpperCase());
+      yaz(buyukler);
+
+      // yöntem 2
+
+      const buyukler2 = anaUnsurlar.map(function (x) {
+        return x.toUpperCase();
+      });
+
+      // 4 unsurun her birinin sağına
+      // sıra nosunun parantez içinde yazıldığı yeni dizi
+
+      const unsurlar2 = anaUnsurlar.map(function (oge, index) {
+        return oge + "(" + (index + 1) + ")";
+      });
+
+      yaz(unsurlar2);
+
+      // map metodunu kullanmadan bir üstteki soruyu çözünüz
+
+      const unsurlar3 = [];
+      anaUnsurlar.forEach((oge, indeks) => {
+        unsurlar3.push(oge + "(" + (indeks + 1) + ")");
+      });
+      yaz(unsurlar3);
+
+      // map ve forEach kullanmadan
+      const unsurlar4 = [];
+      for (let i = 0; i < unsurlar.length; i++) {
+        const yeniOge = anaUnsurlar[i] + "(" + (i + 1) + ")";
+        unsurlar4.push(yeniOge);
+      }
+      yaz(unsurlar4);
+
+      // map ile tek satırda
+
+      yaz(anaUnsurlar.map((x, i) => `${x}(${i + 1})`));
+    </script>
+  </body>
+</html>
